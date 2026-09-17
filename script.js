@@ -14,9 +14,17 @@ document.getElementById("loginButton")
 
         if (mobileNumberValueConverted === mobileNumber
             && pinNumbervalueConverted === pinNumber) {
-            console.log("All value matched")
-        } else {
-            console.log("invalid credentials")
+
+
+            //console.log("All value matched")
+
+
+            window.location.href = "./home.html"
+        }
+
+        else {
+
+            alert("Invalid Credentials")
         }
 
 
