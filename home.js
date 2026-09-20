@@ -55,3 +55,25 @@ document.getElementById("cash-out-button")
 
 
     })
+
+
+//cashout money feature
+
+document.getElementById("cash-out-btn")
+    .addEventListener("click", function (e) {
+
+        e.preventDefault()
+
+        const amount = parseInt(document.getElementById("cash-out-amount").value)
+        const availableBalance = parseInt(document.getElementById("available-balance").innerText
+        )
+
+const totalNewAvailableBalance = availableBalance - amount
+
+console.log(totalNewAvailableBalance)
+
+    })
+
+
+
+

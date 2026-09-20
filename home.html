@@ -122,10 +122,58 @@
             </form>
 
         </div>
-<div>
- <h1 id="cash-out-parent" style="display: none;" class="my-5 font-bold">Cash Out</h1>
+       <div id="cash-out-parent" style="display: none;">
 
+    <h1 class="my-5 font-bold">Cash Out</h1>
 
+    <form action="" class="bg-white rounded-xl p-4">
+
+        <div>
+            <label class="font-semibold">
+                Agent Number
+                <br>
+                <input
+                    id="agent-number"
+                    type="text"
+                    placeholder="Enter 11 digit account number"
+                    class="input bg-[#C4C4C4] mt-3 rounded-3xl w-full"
+                />
+            </label>
+        </div>
+
+        <div class="mt-3">
+            <label class="font-semibold">
+                Amount
+                <br>
+                <input
+                    id="cash-out-amount"
+                    type="text"
+                    placeholder="Enter amount to withdraw"
+                    class="input bg-[#C4C4C4] mt-3 rounded-3xl w-full"
+                />
+            </label>
+        </div>
+
+        <div class="mt-3">
+            <label class="font-semibold">
+                Pin Number
+                <br>
+                <input
+                    id="cash-out-pin"
+                    type="text"
+                    placeholder="Enter 4 digit pin number"
+                    class="input bg-[#C4C4C4] mt-3 rounded-3xl w-full"
+                />
+            </label>
+        </div>
+
+        <button
+            id="cash-out-btn"
+            class="btn btn-primary text-white bg-blue-500 mt-5 w-full rounded-3xl">
+            Withdraw
+        </button>
+
+    </form>
 
 </div>
 
