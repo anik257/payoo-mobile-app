@@ -72,6 +72,8 @@ const totalNewAvailableBalance = availableBalance - amount
 
 console.log(totalNewAvailableBalance)
 
+document.getElementById("available-balance")
+.innerText = totalNewAvailableBalance
     })
 
 
