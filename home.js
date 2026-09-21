@@ -1,4 +1,35 @@
 const validPin = 1234;
+
+
+//function get input value 
+
+
+function getInputValueNumber(id) {
+
+    const inputField = document.getElementById(id);
+
+    const inputFieldValue = inputField.value;
+
+    const inputFieldValueNumber = parseInt(inputFieldValue);
+
+
+
+    return inputFieldValueNumber;
+}
+
+function getInputValue (id){
+
+    const inputField = document.getElementById(id);
+
+    const inputFieldValue = inputField.value;
+
+  return inputFieldValue 
+}
+
+
+
+//Add Money
+
 document.getElementById("add-money-btn")
     .addEventListener("click", function (e) {
 
@@ -8,8 +39,11 @@ document.getElementById("add-money-btn")
 
         const bank = document.getElementById("bank").value;
         const accountNumber = document.getElementById("account-number").value;
-        const amount = parseInt(document.getElementById("add-amount").value);
-        const pin = parseInt(document.getElementById("add-pin").value)
+
+        const amount = getInputValueNumber("add-amount")
+
+
+        const pin = getInputValueNumber("add-pin")
 
         console.log(bank, accountNumber, amount, pin);
 
@@ -34,6 +68,8 @@ document.getElementById("add-money-btn")
         document.getElementById("available-balance").innerText =
             totalNewAvailableBalance;
     });
+
+
 
 
 // toggling feature
@@ -64,18 +100,18 @@ document.getElementById("cash-out-btn")
 
         e.preventDefault()
 
-        const amount = parseInt(document.getElementById("cash-out-amount").value)
+        const amount = getInputValueNumber("cash-out-amount")
+      
         const availableBalance = parseInt(document.getElementById("available-balance").innerText
         )
 
-const totalNewAvailableBalance = availableBalance - amount
+        const totalNewAvailableBalance = availableBalance - amount
 
-console.log(totalNewAvailableBalance)
+        console.log(totalNewAvailableBalance)
 
-document.getElementById("available-balance")
-.innerText = totalNewAvailableBalance
+        document.getElementById("available-balance")
+            .innerText = totalNewAvailableBalance
     })
-
 
 
 
