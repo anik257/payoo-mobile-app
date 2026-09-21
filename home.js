@@ -27,6 +27,30 @@ function getInputValue (id){
 }
 
 
+// function to get innertext
+
+function getInnerText(id) {
+    const element = document.getElementById(id);
+    const elementValue = element.innerText;
+    const elementValueNumber = parseInt(elementValue);
+
+    return elementValueNumber;
+}
+
+// function to set innertext
+
+
+
+function setInnerText(value){
+console.log(value)
+    const availableBalanceElement = document. getElementById("available-balance")
+    availableBalanceElement.innerText = value
+
+
+}
+
+
+
 
 //Add Money
 
@@ -48,7 +72,7 @@ document.getElementById("add-money-btn")
         console.log(bank, accountNumber, amount, pin);
 
         const availableBalance =
-            parseInt(document.getElementById("available-balance").innerText);
+            getInnerText("available-balance");
 
         console.log(availableBalance);
 
@@ -65,8 +89,7 @@ document.getElementById("add-money-btn")
 
         const totalNewAvailableBalance = amount + availableBalance;
 
-        document.getElementById("available-balance").innerText =
-            totalNewAvailableBalance;
+        setInnerText(totalNewAvailableBalance)
     });
 
 
@@ -102,15 +125,13 @@ document.getElementById("cash-out-btn")
 
         const amount = getInputValueNumber("cash-out-amount")
       
-        const availableBalance = parseInt(document.getElementById("available-balance").innerText
-        )
+        const availableBalance = getInnerText("available-balance")
 
         const totalNewAvailableBalance = availableBalance - amount
 
         console.log(totalNewAvailableBalance)
 
-        document.getElementById("available-balance")
-            .innerText = totalNewAvailableBalance
+       setInnerText(totalNewAvailableBalance)
     })
 
 
