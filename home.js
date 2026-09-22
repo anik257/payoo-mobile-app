@@ -193,6 +193,16 @@ document.getElementById("bonus-button").addEventListener
     })
 
 
+    // paybill
+
+    document.getElementById("bill-button").addEventListener
+    ("click", function () {
+
+        handleToggle("pay-bill-parent")
+         handleButtonToggle("bill-button")
+
+    })
+
 
 //cashout money feature
 
