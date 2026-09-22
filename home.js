@@ -17,13 +17,13 @@ function getInputValueNumber(id) {
     return inputFieldValueNumber;
 }
 
-function getInputValue (id){
+function getInputValue(id) {
 
     const inputField = document.getElementById(id);
 
     const inputFieldValue = inputField.value;
 
-  return inputFieldValue 
+    return inputFieldValue
 }
 
 
@@ -41,9 +41,9 @@ function getInnerText(id) {
 
 
 
-function setInnerText(value){
-console.log(value)
-    const availableBalanceElement = document. getElementById("available-balance")
+function setInnerText(value) {
+    console.log(value)
+    const availableBalanceElement = document.getElementById("available-balance")
     availableBalanceElement.innerText = value
 
 
@@ -97,23 +97,74 @@ document.getElementById("add-money-btn")
 
 // toggling feature
 
+//add button
 
 document.getElementById("add-button")
     .addEventListener("click", function () {
-        document.getElementById("cash-out-parent").style.display = "none"
-        document.getElementById("add-money-parent").style.display = "block"
 
+        const forms = document.getElementsByClassName("form")
+
+        for (const form of forms) {
+
+            form.style.display = "none"
+        }
+document.getElementById("add-money-parent")
+.style.display = "block"
 
     })
+
+// cash out
+
+
 document.getElementById("cash-out-button")
     .addEventListener("click", function () {
 
-        document.getElementById("add-money-parent").style.display = "none"
-        document.getElementById("cash-out-parent").style.display = "block"
+
+  const forms = document.getElementsByClassName("form")
+
+        for (const form of forms) {
+
+            form.style.display = "none"
+        }
+document.getElementById("cash-out-parent")
+.style.display = "block"
 
 
 
     })
+
+// transfer money
+
+document.getElementById("transfer-button").addEventListener("click", function () {
+
+      const forms = document.getElementsByClassName("form")
+
+        for (const form of forms) {
+
+            form.style.display = "none"
+        }
+document.getElementById("transfer-money-parent")
+.style.display = "block"
+
+
+})
+
+
+// get bonus
+document.getElementById("bonus-button").addEventListener
+("click",function(){
+const forms = document.getElementsByClassName("form")
+
+        for (const form of forms) {
+
+            form.style.display = "none"
+        }
+document.getElementById("get-bonus-parent")
+.style.display = "block"
+
+
+})
+
 
 
 //cashout money feature
@@ -124,14 +175,14 @@ document.getElementById("cash-out-btn")
         e.preventDefault()
 
         const amount = getInputValueNumber("cash-out-amount")
-      
+
         const availableBalance = getInnerText("available-balance")
 
         const totalNewAvailableBalance = availableBalance - amount
 
         console.log(totalNewAvailableBalance)
 
-       setInnerText(totalNewAvailableBalance)
+        setInnerText(totalNewAvailableBalance)
     })
 
 
