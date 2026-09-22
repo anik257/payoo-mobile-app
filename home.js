@@ -51,6 +51,23 @@ function setInnerText(value) {
 
 
 
+// function to toggle
+
+function handleToggle(id){
+ const forms = document.getElementsByClassName("form")
+
+        for (const form of forms) {
+
+            form.style.display = "none"
+        }
+document.getElementById(id)
+.style.display = "block"
+
+
+}
+
+
+
 
 //Add Money
 
@@ -100,18 +117,14 @@ document.getElementById("add-money-btn")
 //add button
 
 document.getElementById("add-button")
-    .addEventListener("click", function () {
+    .addEventListener("click", function (e) {
 
-        const forms = document.getElementsByClassName("form")
-
-        for (const form of forms) {
-
-            form.style.display = "none"
-        }
-document.getElementById("add-money-parent")
-.style.display = "block"
+      handleToggle("add-money-parent")
 
     })
+
+
+
 
 // cash out
 
@@ -120,14 +133,7 @@ document.getElementById("cash-out-button")
     .addEventListener("click", function () {
 
 
-  const forms = document.getElementsByClassName("form")
-
-        for (const form of forms) {
-
-            form.style.display = "none"
-        }
-document.getElementById("cash-out-parent")
-.style.display = "block"
+  handleToggle("cash-out-parent")
 
 
 
@@ -137,15 +143,8 @@ document.getElementById("cash-out-parent")
 
 document.getElementById("transfer-button").addEventListener("click", function () {
 
-      const forms = document.getElementsByClassName("form")
-
-        for (const form of forms) {
-
-            form.style.display = "none"
-        }
-document.getElementById("transfer-money-parent")
-.style.display = "block"
-
+    
+ handleToggle("transfer-money-parent")
 
 })
 
@@ -153,15 +152,8 @@ document.getElementById("transfer-money-parent")
 // get bonus
 document.getElementById("bonus-button").addEventListener
 ("click",function(){
-const forms = document.getElementsByClassName("form")
 
-        for (const form of forms) {
-
-            form.style.display = "none"
-        }
-document.getElementById("get-bonus-parent")
-.style.display = "block"
-
+ handleToggle("get-bonus-parent")
 
 })
 
