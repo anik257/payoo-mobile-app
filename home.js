@@ -53,18 +53,44 @@ function setInnerText(value) {
 
 // function to toggle
 
-function handleToggle(id){
- const forms = document.getElementsByClassName("form")
+function handleToggle(id) {
+    const forms = document.getElementsByClassName("form")
 
-        for (const form of forms) {
+    for (const form of forms) {
 
-            form.style.display = "none"
-        }
-document.getElementById(id)
-.style.display = "block"
+        form.style.display = "none"
+    }
+    document.getElementById(id)
+        .style.display = "block"
 
 
 }
+
+
+// function to toggole button
+
+function handleButtonToggle(id){       const formBtns = document.getElementsByClassName("form-btn");
+
+for (const btn of formBtns) {
+
+    btn.classList.remove(
+        "border-[#0874f2]",
+        "bg-[#0874f20d]"
+    );
+btn.classList.add("border-gray-300")
+}
+document
+    .getElementById(id)
+    .classList.remove(
+       "border-gray-300"
+    );
+
+document
+    .getElementById(id)
+    .classList.add(
+        "border-[#0874f2]",
+        "bg-[#0874f20d]"
+    );}
 
 
 
@@ -119,9 +145,11 @@ document.getElementById("add-money-btn")
 document.getElementById("add-button")
     .addEventListener("click", function (e) {
 
-      handleToggle("add-money-parent")
+        handleToggle("add-money-parent");
+     handleButtonToggle("add-button")
 
-    })
+    });
+
 
 
 
@@ -133,29 +161,36 @@ document.getElementById("cash-out-button")
     .addEventListener("click", function () {
 
 
-  handleToggle("cash-out-parent")
-
-
+        handleToggle("cash-out-parent")
+    handleButtonToggle("cash-out-button")
 
     })
+
+    
 
 // transfer money
 
 document.getElementById("transfer-button").addEventListener("click", function () {
 
-    
- handleToggle("transfer-money-parent")
 
-})
+    handleToggle("transfer-money-parent")
+
+  handleButtonToggle("transfer-button")
+
+
+    })
+
+
 
 
 // get bonus
 document.getElementById("bonus-button").addEventListener
-("click",function(){
+    ("click", function () {
 
- handleToggle("get-bonus-parent")
+        handleToggle("get-bonus-parent")
+         handleButtonToggle("bonus-button")
 
-})
+    })
 
 
 
