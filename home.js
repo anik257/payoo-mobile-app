@@ -1,5 +1,5 @@
 const validPin = 1234;
-
+const transactionData = []
 
 //function get input value 
 
@@ -133,9 +133,50 @@ document.getElementById("add-money-btn")
         const totalNewAvailableBalance = amount + availableBalance;
 
         setInnerText(totalNewAvailableBalance)
-    });
+
+const data = {
+    name: "Add Money",
+    date: new Date().toLocaleTimeString()
+};
+
+transactionData.push(data);
+console.log(transactionData);
+
+});
 
 
+document.getElementById("transaction-button").addEventListener("click", function () {
+
+    const transactionContainer = document.getElementById("transaction-container");
+transactionContainer.innerText = ""
+    for (const data of transactionData) {
+
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+            <div class="bg-white rounded-xl p-3 flex justify-between items-center mt-3">
+
+                <div class="flex items-center">
+
+                    <div class="border-2 p-3 rounded-full bg-[#efe9e9]">
+                        <img src="./assets/wallet1.png" alt="" class="mx-auto">
+                    </div>
+
+                    <div class="ml-3">
+                        <h1>${data.name}</h1>
+                        <p>${data.date}</p>
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+
+            </div>
+        `;
+
+        transactionContainer.appendChild(div);
+    }
+});
 
 
 // toggling feature
@@ -164,6 +205,13 @@ document.getElementById("cash-out-button")
         handleToggle("cash-out-parent")
     handleButtonToggle("cash-out-button")
 
+  const data = {
+    name:"Cash Out",
+    date:new Date().toLocaleTimeString()
+}
+
+transactionData.push(data)  
+console.log(transactionData)
     })
 
     
@@ -200,6 +248,16 @@ document.getElementById("bonus-button").addEventListener
 
         handleToggle("pay-bill-parent")
          handleButtonToggle("bill-button")
+
+    })
+
+// transaction 
+
+    document.getElementById("transaction-button").addEventListener
+    ("click", function () {
+
+        handleToggle("transaction-parent")
+         handleButtonToggle("transaction-button")
 
     })
 
