@@ -109,6 +109,11 @@ document.getElementById("add-money-btn")
 
         const amount = getInputValueNumber("add-amount")
 
+        if (amount<=0){
+            alert("invalid amount")
+            return
+        }
+
 
         const pin = getInputValueNumber("add-pin")
 
@@ -272,6 +277,11 @@ document.getElementById("cash-out-btn")
         const amount = getInputValueNumber("cash-out-amount")
 
         const availableBalance = getInnerText("available-balance")
+
+        if (amount <=0 || amount > availableBalance){
+            alert("invalid amount")
+            return
+        }
 
         const totalNewAvailableBalance = availableBalance - amount
 
